@@ -29,6 +29,6 @@ spring:
         format_sql: true
   liquibase: 
     change-log: /db/changelog/db.changelog-master.xml
-  main: 
+#   main: 
 #     allow-bean-definition-overriding: true
 #     web-application-type: reactive
