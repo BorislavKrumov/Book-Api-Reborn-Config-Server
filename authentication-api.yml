@@ -15,6 +15,7 @@ spring:
   liquibase:
     change-log: /db/changelog/db.changelog-master.xml
   main:
+    web-application-type: reactive
     allow-bean-definition-overriding: true
   cloud:
     gateway:
