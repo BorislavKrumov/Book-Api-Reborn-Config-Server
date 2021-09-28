@@ -17,18 +17,6 @@ spring:
           predicates: 
             - Path=/assignments/**
           uri: "http://ASSIGNMENT-API"
-#   datasource: 
-#     url: "jdbc:mysql://localhost:3306/library?createDatabaseIfNotExist=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
-#     username: root
-#     password: root
-#   jpa: 
-#     hibernate: 
-#       ddl-auto: update
-#     properties: 
-#       hibernate: 
-#         format_sql: true
-#   liquibase: 
-#     change-log: /db/changelog/db.changelog-master.xml
   main: 
     allow-bean-definition-overriding: true
     web-application-type: reactive
