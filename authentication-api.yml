@@ -30,5 +30,5 @@ spring:
   liquibase: 
     change-log: /db/changelog/db.changelog-master.xml
   main: 
-    allow-bean-definition-overriding: true
-    web-application-type: reactive
+#     allow-bean-definition-overriding: true
+#     web-application-type: reactive
