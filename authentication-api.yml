@@ -5,18 +5,15 @@ spring:
   cloud: 
     gateway: 
       routes: 
-        - 
-          id: userModule
+        - id: userModule
           predicates: 
             - Path=/users/**
           uri: "http://USER-SERVICE"
-        - 
-          id: bookModule
+        - id: bookModule
           predicates: 
             - Path=/books/**
           uri: "http://BOOK-API"
-        - 
-          id: assignmentModule
+        - id: assignmentModule
           predicates: 
             - Path=/assignments/**
           uri: "http://ASSIGNMENT-API"
