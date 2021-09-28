@@ -29,7 +29,7 @@ spring:
           predicates:
             - Path=/books/**
         - id: assignmentModule
-            uri: http://ASSIGNMENT-API
-            predicates:
-              - Path=/assignments/**
+           uri: http://ASSIGNMENT-API
+           predicates:
+             - Path=/assignments/**
 
