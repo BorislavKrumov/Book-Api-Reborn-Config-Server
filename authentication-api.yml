@@ -1,35 +1,37 @@
-server:
+--- 
+server: 
   port: 8083
-
-spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/library?createDatabaseIfNotExist=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: root
-    password: root
-  jpa:
-    properties:
-      hibernate:
-        format_sql: true
-    hibernate:
-      ddl-auto: update
-  liquibase:
-    change-log: /db/changelog/db.changelog-master.xml
-  main:
-    web-application-type: reactive
-    allow-bean-definition-overriding: true
-  cloud:
-    gateway:
-      routes:
-        - id: userModule
-          uri: http://USER-SERVICE
-          predicates:
+spring: 
+  cloud: 
+    gateway: 
+      routes: 
+        - 
+          id: userModule
+          predicates: 
             - Path=/users/**
-        - id: bookModule
-          uri: http://BOOK-API
-          predicates:
+          uri: "http://USER-SERVICE"
+        - 
+          id: bookModule
+          predicates: 
             - Path=/books/**
-        - id: assignmentModule
-           uri: http://ASSIGNMENT-API
-           predicates:
-             - Path=/assignments/**
-
+          uri: "http://BOOK-API"
+        - 
+          id: assignmentModule
+          predicates: 
+            - Path=/assignments/**
+          uri: "http://ASSIGNMENT-API"
+  datasource: 
+    password: root
+    url: "jdbc:mysql://localhost:3306/library?createDatabaseIfNotExist=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+    username: root
+  jpa: 
+    hibernate: 
+      ddl-auto: update
+    properties: 
+      hibernate: 
+        format_sql: true
+  liquibase: 
+    change-log: /db/changelog/db.changelog-master.xml
+  main: 
+    allow-bean-definition-overriding: true
+    web-application-type: reactive
