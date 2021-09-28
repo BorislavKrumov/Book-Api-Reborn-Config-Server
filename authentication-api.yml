@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: userModule
+          uri: http://USER-SERVICE
+          predicates:
+            - Path=/users/**
+        - id: bookModule
+          uri: http://BOOK-API
+          predicates:
+            - Path=/books/**
+        - id: assignmentModule
+            uri: http://ASSIGNMENT-API
+            predicates:
+              - Path=/assignments/**
+
+
