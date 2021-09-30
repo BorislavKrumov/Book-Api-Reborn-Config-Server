@@ -12,7 +12,7 @@ spring:
         - id: USER-API
           predicates: 
             - Path=/users/**
-          uri: "http://USER-SERVICE"
+          uri: "http://USER-API"
     discovery:
       locator:
         enabled: true 
