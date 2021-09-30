@@ -7,12 +7,6 @@ spring:
       name: "user"
       password: "pass"
   cloud: 
-    gateway:
-      routes: 
-        - id: USER-API
-          predicates: 
-            - Path=/users/**
-          uri: "http://USER-API"
     discovery:
       locator:
         enabled: true 
