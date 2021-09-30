@@ -7,20 +7,10 @@ spring:
       name: "user"
       password: "pass"
   cloud: 
-    gateway: 
-      routes: 
-        - id: userModule
-          predicates: 
-            - Path=/users/**
-          uri: "http://USER-SERVICE"
-        - id: bookModule
-          predicates: 
-            - Path=/books/**
-          uri: "http://BOOK-API"
-        - id: assignmentModule
-          predicates: 
-            - Path=/assignments/**
-          uri: "http://ASSIGNMENT-API"
+    gateway:
+      discovery:
+        client:
+          enabled: true 
   main: 
     allow-bean-definition-overriding: true
     web-application-type: reactive
