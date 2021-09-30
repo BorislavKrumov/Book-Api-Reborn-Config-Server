@@ -17,9 +17,6 @@ jwt:
   secretKey: ecf1222c-88fd-47f3-988f-bdd78bade1ad
 
 eureka:
-  instance:
-    prefer-ip-address: true
-    hostname: localhost
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
