@@ -10,9 +10,9 @@ spring:
     discovery:
       locator:
         enabled: true 
-  main: 
-    allow-bean-definition-overriding: true
-    web-application-type: reactive
+#   main: 
+#     allow-bean-definition-overriding: true
+#     web-application-type: reactive
 jwt:
   secretKey: ecf1222c-88fd-47f3-988f-bdd78bade1ad
 
