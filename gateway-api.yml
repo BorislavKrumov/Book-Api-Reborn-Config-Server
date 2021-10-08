@@ -10,6 +10,15 @@ spring:
     discovery:
       locator:
         enabled: true 
+    gateway:
+      routes:
+        - id: user-api
+          uri: lb://user-api
+          predicates: 
+          - Path=/users/**
+          filters:
+          - RewritePath=/users/(?<path>.*), /$\{path}
+          
 #   main: 
 #     allow-bean-definition-overriding: true
 #     web-application-type: reactive
@@ -21,7 +30,7 @@ eureka:
     hostname: localhost
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka/
       
 feign:
   hystrix:
